@@ -10,6 +10,11 @@ import (
 
 func main() {
 	args := os.Args[1:]
+	log.Println("Value of env variable", os.Getenv("WHO_TO_TRUST"))
+	if len(args) == 1 {
+		log.Println(args[0])
+	}
+
 	if len(args) != 4 {
 		msg := `
 			Please provide two params.
