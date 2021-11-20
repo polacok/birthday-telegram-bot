@@ -10,21 +10,10 @@ import (
 
 func main() {
 	args := os.Args[1:]
-	for _, value := range os.Environ() {
-		log.Println(value)
-	}
-	log.Println("who to trust:", os.Getenv("WHO_TO_TRUST"))
-	if len(args) == 1 {
-		log.Println(args[0])
-	}
-
-	if len(args) != 4 {
+	if len(args) != 2 {
 		msg := `
-			Please provide four params.
 			First param is location of namedays file in csv format, 
 			Second param is location of birthday file in json format
-			Third param is secret telegram token
-			Forth param is communicator id to whom send message
 		`
 		panic(msg)
 	}
@@ -36,7 +25,7 @@ func main() {
 
 	message := tools.GenerateMessage(namedays, people)
 
-	telegram := telegram.CreateTelegram(args[2], args[3])
+	telegram := telegram.CreateTelegram(os.Getenv("TELEGRAM_API"), os.Getenv("MESSAGE_ID"))
 	if len(*message) > 0 {
 		telegram.SendMessage(message)
 	}

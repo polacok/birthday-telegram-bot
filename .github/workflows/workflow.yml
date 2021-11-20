@@ -17,10 +17,13 @@ jobs:
 
       - name: Build app
         env: 
-          WHO_TO_TRUST: ${{ secrets.TELEGRAM_API }}
+          TELEGRAM_API: ${{ secrets.TELEGRAM_API }}
+          MESSAGE_ID: ${{ secrets.MESSAGE_ID }}
+          NAMEDAYS: ${{ secrets.NAMEDAYS }}
+          BIRTHDAYS: ${{ secrets.BIRTHDAYS }}
         run: |
-          echo "$WHO_TO_TRUST"
-          echo ${{ secrets.TELEGRAM_API }}
+          echo $NAMEDAYS > nameday
+          echo $BIRTHDAYS > birthday
+
           go build
-          ./birthday-telegram-bot $WHO_TO_TRUST
-          
+          ./birthday-telegram-bot ./nameday ./birthday           
