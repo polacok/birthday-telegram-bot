@@ -19,7 +19,7 @@ func main() {
 
 	if len(args) != 4 {
 		msg := `
-			Please provide two params.
+			Please provide four params.
 			First param is location of namedays file in csv format, 
 			Second param is location of birthday file in json format
 			Third param is secret telegram token
