@@ -3,7 +3,7 @@ name: TestWorkFlow
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   lint:
