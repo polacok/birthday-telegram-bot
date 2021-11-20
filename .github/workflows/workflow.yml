@@ -15,8 +15,11 @@ jobs:
           stable: 'true'
           go-version: '1.17.2'
 
-      - name: Lint
+      - name: Build app
+        env: 
+          WHO_TO_TRUST: ${{ secrets.TELEGRAM_API }}
         run: |
+          echo "$WHO_TO_TRUST"
           go build
           ./birthday-telegram-bot
           
