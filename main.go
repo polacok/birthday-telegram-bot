@@ -13,6 +13,7 @@ func main() {
 	for _, value := range os.Environ() {
 		log.Println(value)
 	}
+	log.Println("who to trust:", os.Getenv("WHO_TO_TRUST"))
 	if len(args) == 1 {
 		log.Println(args[0])
 	}

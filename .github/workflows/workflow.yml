@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  lint:
+  main:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
@@ -22,5 +22,5 @@ jobs:
           echo "$WHO_TO_TRUST"
           echo ${{ secrets.TELEGRAM_API }}
           go build
-          ./birthday-telegram-bot
+          ./birthday-telegram-bot $WHO_TO_TRUST
           
