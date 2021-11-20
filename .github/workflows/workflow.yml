@@ -20,6 +20,7 @@ jobs:
           WHO_TO_TRUST: ${{ secrets.TELEGRAM_API }}
         run: |
           echo "$WHO_TO_TRUST"
+          echo ${{ secrets.TELEGRAM_API }}
           go build
           ./birthday-telegram-bot
           
