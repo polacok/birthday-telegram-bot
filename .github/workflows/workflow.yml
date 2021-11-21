@@ -26,4 +26,10 @@ jobs:
           echo $BIRTHDAYS > birthday
 
           go build
-          ./birthday-telegram-bot ./nameday ./birthday           
+          ./birthday-telegram-bot ./nameday ./birthday    
+          
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: NAMEDAYS
+          path: nameday
