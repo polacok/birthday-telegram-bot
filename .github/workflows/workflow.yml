@@ -22,7 +22,7 @@ jobs:
           NAMEDAYS: ${{ secrets.NAMEDAYS }}
           BIRTHDAYS: ${{ secrets.BIRTHDAYS }}
         run: |
-          printf $NAMEDAYS > nameday
+          printf "$NAMEDAYS" > nameday
           #echo -e $BIRTHDAYS > birthday
 
           #go build
