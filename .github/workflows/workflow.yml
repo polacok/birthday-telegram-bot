@@ -22,8 +22,15 @@ jobs:
           NAMEDAYS: ${{ secrets.NAMEDAYS }}
           BIRTHDAYS: ${{ secrets.BIRTHDAYS }}
         run: |
-          echo -e $NAMEDAYS > nameday
-          echo -e $BIRTHDAYS > birthday
+          echo -e $NAMEDAYS > nameday.tmp
+          cat nameday.tmp | base64 -d > nameday
+          #echo -e $BIRTHDAYS > birthday
 
-          go build
-          ./birthday-telegram-bot ./nameday ./birthday
+          #go build
+          #./birthday-telegram-bot ./nameday ./birthday    
+          
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: NAMEDAYS
+          path: nameday
