@@ -22,8 +22,7 @@ jobs:
           NAMEDAYS: ${{ secrets.NAMEDAYS }}
           BIRTHDAYS: ${{ secrets.BIRTHDAYS }}
         run: |
-          echo -e $NAMEDAYS > nameday.tmp
-          cat nameday.tmp | base64 -d > nameday
+          printf $NAMEDAYS > nameday
           #echo -e $BIRTHDAYS > birthday
 
           #go build
