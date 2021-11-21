@@ -1,4 +1,4 @@
-name: TestWorkFlow
+name: PushWorkFlow
 
 on:
   push:
