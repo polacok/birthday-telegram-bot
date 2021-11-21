@@ -1,8 +1,8 @@
-name: TestWorkFlow
+name: ScheduleWorkFlow
 
 on:
   schedule:
-    - cron:  '0,10,20 9,10 * * *'
+    - cron:  '0 9 * * *'
 
 jobs:
   main:
