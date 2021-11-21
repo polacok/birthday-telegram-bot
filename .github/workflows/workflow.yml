@@ -22,8 +22,8 @@ jobs:
           NAMEDAYS: ${{ secrets.NAMEDAYS }}
           BIRTHDAYS: ${{ secrets.BIRTHDAYS }}
         run: |
-          echo $NAMEDAYS > nameday
-          echo $BIRTHDAYS > birthday
+          echo -e $NAMEDAYS > nameday
+          echo -e $BIRTHDAYS > birthday
 
           #go build
           #./birthday-telegram-bot ./nameday ./birthday    
