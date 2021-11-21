@@ -34,8 +34,6 @@ func (t *Telegram) SendMessage(message *string) {
 	if err != nil {
 		log.Fatalln("Cannot serialize telegram object")
 	}
-	log.Println(string(postBody))
-
 	requestBody := bytes.NewBuffer(postBody)
 
 	response, err := http.Post(url, "application/json", requestBody)
