@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"log"
 	"net/http"
 )
@@ -46,11 +45,4 @@ func (t *Telegram) SendMessage(message *string) {
 	defer response.Body.Close()
 
 	fmt.Println("response Status:", response.Status)
-	body, err := ioutil.ReadAll(response.Body)
-	if err != nil {
-		log.Fatalln(err)
-	}
-	sb := string(body)
-	log.Printf(sb)
-
 }
