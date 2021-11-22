@@ -12,8 +12,8 @@ func main() {
 	args := os.Args[1:]
 	if len(args) != 2 {
 		msg := `
-			First param is location of namedays file in csv format, 
-			Second param is location of birthday file in json format
+			First param is path to namedays file in csv format, 
+			Second param is path to birthday file in json format
 		`
 		panic(msg)
 	}
